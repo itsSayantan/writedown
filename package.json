@@ -1,9 +1,16 @@
 {
   "name": "writedown",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
+  "scripts": {
+    "electron": "electron ."
+  },
   "devDependencies": {
     "electron": "^7.1.1"
-  }
+  },
+  "contributors": [
+    "Sayantan Ghosh <sayantan.ghosh03@gmail.com> (https://github.com/itsSayantan)",
+    "Parnab Sanyal <sanyal.parnab96@gmail.com> (https://github.com/iamparnab)"
+  ]
 }
