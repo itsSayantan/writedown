@@ -1,6 +1,11 @@
 {
   "name": "writedown",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamparnab/writedown"
+  },
+  "private": false,
   "main": "main.js",
   "license": "MIT",
   "scripts": {
