@@ -1,27 +1,32 @@
 {
   "name": "writedown",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest --no-watch"
+    "test": "jest --no-watch",
+    "electron": "electron ."
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
-    "electron": "^7.1.1",
     "husky": "^3.0.9",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "electron": "^7.1.1"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn test"
     }
-  }
+  },
+  "contributors": [
+    "Sayantan Ghosh <sayantan.ghosh03@gmail.com> (https://github.com/itsSayantan)",
+    "Parnab Sanyal <sanyal.parnab96@gmail.com> (https://github.com/iamparnab)"
+  ]
 }
