@@ -1,6 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require("electron");
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   let win = new BrowserWindow({
     width: 800,
@@ -8,10 +8,10 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     }
-  })
+  });
 
   // and load the index.html of the app.
-  win.loadFile('index.html')
+  win.loadFile("./dist/index.html");
 }
 
-app.on('ready', createWindow)
+app.on("ready", createWindow);
