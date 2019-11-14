@@ -1,22 +1,38 @@
 const path = require("path");
+const webpack = require("webpack");
 
-const { cleanup, copy } = require("./utils");
+const { copy } = require("./utils");
 
-cleanup();
 copy();
 
 module.exports = {
   mode: "production",
-  entry: "./index.js",
+  entry: "./index.tsx",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"]
+  },
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "bundle.js"
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "./dist"),
+    contentBase: path.resolve(__dirname, "./"),
+    disableHostCheck: true,
     port: 8080,
-    hot: true,
-    writeToDisk: true,
-    compress: true
-  }
+    compress: true,
+    hot: true
+  },
+  module: {
+    rules: [
+      {
+        test: /s[ac]ss/,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /.tsx?$/,
+        use: ["ts-loader"]
+      }
+    ]
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };

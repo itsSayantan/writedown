@@ -6,16 +6,22 @@
     "url": "https://github.com/iamparnab/writedown"
   },
   "private": false,
-  "main": "main.js",
+  "main": "./src/electron/main.ts",
   "license": "MIT",
   "scripts": {
     "test": "jest --no-watch",
     "lint": "eslint .",
     "start": "webpack-dev-server",
+    "react:build": "webpack",
     "electron": "webpack && electron ."
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "electron": "^7.1.1",
@@ -23,8 +29,11 @@
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "node-sass": "^4.13.0",
+    "rimraf": "^3.0.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
@@ -38,5 +47,8 @@
     "Sayantan Ghosh <sayantan.ghosh03@gmail.com> (https://github.com/itsSayantan)",
     "Parnab Sanyal <sanyal.parnab96@gmail.com> (https://github.com/iamparnab)"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
 }
