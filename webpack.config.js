@@ -6,7 +6,11 @@ const { copy } = require("./utils");
 copy();
 
 module.exports = {
-  mode: "production",
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  devtool:
+    process.env.NODE_ENV === "production"
+      ? "source-map"
+      : "cheap-module-eval-source-map",
   entry: "./index.tsx",
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
@@ -16,7 +20,7 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "./"),
+    contentBase: path.resolve(__dirname, "src/react"),
     disableHostCheck: true,
     port: 8080,
     compress: true,
