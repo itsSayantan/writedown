@@ -6,14 +6,14 @@
     "url": "https://github.com/iamparnab/writedown"
   },
   "private": false,
-  "main": "./src/electron/main.ts",
+  "main": "./dist/electron/main.js",
   "license": "MIT",
   "scripts": {
     "test": "jest --no-watch",
     "lint": "eslint .",
-    "start": "NODE_ENV='development' webpack-dev-server",
-    "react:build": "NODE_ENV='production' webpack",
-    "electron": "webpack && electron ."
+    "start": "NODE_ENV='development' webpack-dev-server --config ./config/react/webpack.config.js",
+    "react:build": "NODE_ENV='production' webpack --config ./config/react/webpack.config.js",
+    "electron:dev": "tsc  --p ./config/electron/tsconfig.json && concurrently \"yarn start\" \"wait-on http://localhost:8080 && electron . --disable-gpu\""
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
@@ -48,7 +48,11 @@
     "Parnab Sanyal <sanyal.parnab96@gmail.com> (https://github.com/iamparnab)"
   ],
   "dependencies": {
+    "concurrently": "^5.0.0",
+    "cross-env": "^6.0.3",
+    "electron-is-dev": "^1.1.0",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "wait-on": "^3.3.0"
   }
 }

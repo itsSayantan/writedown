@@ -16,11 +16,11 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js"]
   },
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "../../dist/react"),
     filename: "bundle.js"
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "src/react"),
+    contentBase: path.resolve(__dirname, "../../src/react"),
     disableHostCheck: true,
     port: 8080,
     compress: true,
@@ -29,11 +29,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /s[ac]ss/,
+        test: /\.s[ac]ss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /.tsx?$/,
+        test: /.tsx{0,1}$/,
         use: ["ts-loader"]
       }
     ]
