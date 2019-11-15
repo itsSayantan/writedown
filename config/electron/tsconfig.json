@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "esModuleInterop": true, // to use default imports
+        "moduleResolution": "node", // to import module in node's style (w/o specifying file format)
+        "outDir": "../../dist/electron"
+    },
+    "include": [
+        "../../src/electron/**/*"
+    ],
+    "exclude": [
+        "../../node_modules"
+    ]
+}

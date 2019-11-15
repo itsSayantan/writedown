@@ -1,18 +1,7 @@
-const { app, BrowserWindow } = require("electron");
-const path = require("path");
+import { app } from 'electron';
 
-function createWindow() {
-  // Create the browser window.
-  let win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true
-    }
-  });
+import { appEvents } from './events';
+import EventHandler from './event-handler';
 
-  // and load the index.html of the app.
-  win.loadFile("./dist/index.html");
-}
-
-app.on("ready", createWindow);
+EventHandler.attachEvents(app, appEvents)
+console.log(app)
