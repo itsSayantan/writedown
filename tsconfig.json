@@ -12,7 +12,12 @@
     "jsx": "react", // to use jsx in ts file (i.e., tsx)
     "esModuleInterop": true, // to use default imports
     "moduleResolution": "node", // to import module in node's style (w/o specifying file format)
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "baseUrl": "src",
+    "paths": {
+      "@Components/*": ["react/components/*"],
+      "@Shared/*": ["react/shared/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
