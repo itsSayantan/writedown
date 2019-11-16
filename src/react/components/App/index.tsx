@@ -6,6 +6,7 @@ import { reducer } from "./reducer";
 import { getDefaultContextValues } from "@Shared/context/factory";
 import { AppContext } from "@Shared/context";
 import { FileTabs } from "@Components/FileTabs";
+import { ApplicationFooter } from "@Components/ApplicationFooter";
 
 export const App = () => {
   const [context, dispatch] = React.useReducer(
@@ -17,6 +18,15 @@ export const App = () => {
       <AppContext.Provider value={context}>
         <FileTabs dispatch={dispatch} />
         <ContentArea dispatch={dispatch} />
+        <ApplicationFooter
+          render={[
+            { component: () => <div>Gitlens</div>, align: "left" },
+            { component: () => <div>Live Share</div>, align: "left" },
+            { component: () => <div>Notification</div>, align: "right" },
+            { component: () => <div>Prettier</div>, align: "right" },
+            { component: () => <div>Line 40 Col 50</div>, align: "right" }
+          ]}
+        />
       </AppContext.Provider>
     </div>
   );

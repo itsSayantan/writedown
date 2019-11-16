@@ -1,0 +1,36 @@
+.application-footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  width: calc(100% - 10px);
+  height: 12px;
+  background-color: #333444;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+}
+
+.application-footer-item {
+  color: #fff;
+  font-size: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  flex-direction: row;
+}
+
+.left span {
+  margin-right: 15px;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
+
+.right span {
+  margin-left: 15px;
+}
