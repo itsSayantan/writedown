@@ -4,3 +4,12 @@
   margin: 0px;
   padding: 0px;
 }
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.pointer {
+  cursor: pointer;
+}
