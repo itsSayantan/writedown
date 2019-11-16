@@ -1,0 +1,17 @@
+.filetabs-wrapper {
+  height: 30px;
+  background-color: #07511645;
+  display: flex;
+  font-size: 12px;
+  & > div {
+    width: 190px;
+    border: 1px solid chartreuse;
+    border-top: none;
+    border-bottom: none;
+    padding: 0 0.5em;
+    line-height: 30px;
+  }
+  & > .active {
+    background-color: #00800075;
+  }
+}

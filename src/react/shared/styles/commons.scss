@@ -1,4 +1,14 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.pointer {
+  cursor: pointer;
 }
