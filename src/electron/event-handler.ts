@@ -1,4 +1,4 @@
-import { EventObject } from './events';
+import { EventObject } from './constants/events';
 
 export default class EventHandler {
     static attachEvents(eventTarget: any, eventArray: Array<EventObject>) {
