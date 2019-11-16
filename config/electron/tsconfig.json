@@ -6,7 +6,8 @@
         "preserveConstEnums": true,
         "esModuleInterop": true, // to use default imports
         "moduleResolution": "node", // to import module in node's style (w/o specifying file format)
-        "outDir": "../../dist/electron"
+        "outDir": "../../dist/electron",
+        "downlevelIteration": true
     },
     "include": [
         "../../src/electron/**/*"

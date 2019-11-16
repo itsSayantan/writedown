@@ -1,7 +1,6 @@
-import { app } from 'electron';
+import { app } from "electron";
 
-import { appEvents } from './events';
-import EventHandler from './event-handler';
+import { appEvents } from "./constants/events";
+import EventHandler from "./event-handler";
 
-EventHandler.attachEvents(app, appEvents)
-console.log(app)
+EventHandler.attachEvents(app, appEvents);
