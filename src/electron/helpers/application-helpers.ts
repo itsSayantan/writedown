@@ -27,6 +27,7 @@ const createWindow = (): void => {
   log("window created");
 
   writedownMainBrowserWindow.maximize();
+  writedownMainBrowserWindow.webContents.openDevTools();
 
   writedownMainBrowserWindow.loadURL(
     isDev
