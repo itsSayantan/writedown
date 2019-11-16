@@ -1,10 +1,12 @@
 import React from "react";
-import "./App.scss";
+import "./style.scss";
+import "@Shared/styles/commons.scss";
+import { ContentArea } from "@Components/ContentArea";
+
 export const App = () => {
   return (
     <div>
-      <h1>This is TSX</h1>
-      <input placeholder="Enter name" />
+      <ContentArea />
     </div>
   );
 };
