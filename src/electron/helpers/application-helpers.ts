@@ -1,16 +1,16 @@
-import { BrowserWindow, Menu, MenuItem } from "electron";
+import { BrowserWindow, Menu } from "electron";
 import * as isDev from "electron-is-dev";
 
 import { debuglog } from "util";
 import * as path from "path";
 
-import { applicationMenuItems } from "../constants/application-main-menu";
+import { fileMenuItems } from "../constants/application-main-menu";
 
 const createApplicationMenu = (): Menu => {
   return Menu.buildFromTemplate([
     {
       label: "File",
-      submenu: applicationMenuItems
+      submenu: fileMenuItems
     }
   ]);
 };
@@ -25,6 +25,8 @@ const createWindow = (): void => {
     }
   });
   log("window created");
+
+  writedownMainBrowserWindow.maximize();
 
   writedownMainBrowserWindow.loadURL(
     isDev

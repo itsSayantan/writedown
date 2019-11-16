@@ -1,6 +1,6 @@
 import { MenuItemConstructorOptions } from "electron";
 
-const applicationMenuItems: Array<MenuItemConstructorOptions> = [
+const fileMenuItems: Array<MenuItemConstructorOptions> = [
   {
     type: "normal",
     label: "New",
@@ -22,4 +22,4 @@ const applicationMenuItems: Array<MenuItemConstructorOptions> = [
   }
 ];
 
-export { applicationMenuItems };
+export { fileMenuItems };
