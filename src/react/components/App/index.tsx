@@ -7,12 +7,22 @@ import { getDefaultContextValues } from "@Shared/context/factory";
 import { AppContext } from "@Shared/context";
 import { FileTabs } from "@Components/FileTabs";
 import { ApplicationFooter } from "@Components/ApplicationFooter";
-
+import { ipcRenderer } from "electron";
+import { actions } from "./actions";
 export const App = () => {
   const [context, dispatch] = React.useReducer(
     reducer,
     getDefaultContextValues()
   );
+  React.useEffect(() => {
+    ipcRenderer.once("NEW_SIGNAL_FROM_APPLICATION_MENU", () => {
+      dispatch({
+        type: actions.ON_NEW_FILE,
+        payload: "Untitled-" + (context.totalOpenedFiles + 1)
+      });
+    });
+  }, [context.totalOpenedFiles]);
+
   return (
     <div className="application-wrapper">
       <AppContext.Provider value={context}>

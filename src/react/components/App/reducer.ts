@@ -7,16 +7,30 @@ export function reducer(
   action: DispatchType
 ): ContextProps {
   switch (action.type) {
-    case actions.UPDATE_THEME: {
+    case actions.ON_UPDATE_THEME: {
       return {
         ...state,
         theme: action.payload as ThemeType
       };
     }
-    case actions.UPDATE_THEME: {
+    case actions.ON_NEW_FILE: {
       return {
         ...state,
-        currentFile: action.payload as string
+        openFiles: [
+          ...state.openFiles,
+          {
+            name: action.payload as string,
+            unsaved: true
+          }
+        ],
+        totalOpenedFiles: state.totalOpenedFiles + 1
+      };
+    }
+    case actions.ON_CLOSE_FILE: {
+      const tabIndex = action.payload as number;
+      return {
+        ...state,
+        openFiles: state.openFiles.filter((_, index) => index !== tabIndex)
       };
     }
     default:
