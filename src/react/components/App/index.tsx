@@ -9,6 +9,7 @@ import { FileTabs } from "@Components/FileTabs";
 import { ApplicationFooter } from "@Components/ApplicationFooter";
 import { ipcRenderer } from "electron";
 import { actions } from "./actions";
+import * as fs from "fs";
 export const App = () => {
   const [context, dispatch] = React.useReducer(
     reducer,
@@ -21,11 +22,34 @@ export const App = () => {
         payload: "Untitled-" + (context.totalOpenedFiles + 1)
       });
       dispatch({
-        type: actions.ON_UPDATE_SELECTED_FILE,
+        type: actions.ON_FILE_SELECT,
         payload: "Untitled-" + (context.totalOpenedFiles + 1)
       });
     });
   }, [context.totalOpenedFiles]);
+
+  React.useEffect(() => {
+    ipcRenderer.on(
+      "SAVE_SIGNAL_FROM_APPLICATION_MENU",
+      (event, path: string) => {
+        fs.writeFileSync(
+          path,
+          (document.querySelector(".content-area-wrapper") as HTMLDivElement)
+            .innerText
+        );
+
+        dispatch({
+          type: actions.ON_SAVE_FILE,
+          payload: context.currentFile
+        });
+
+        dispatch({
+          type: actions.ON_RENAME_FILE,
+          payload: path.substring(path.lastIndexOf("/") + 1)
+        });
+      }
+    );
+  }, []);
 
   return (
     <div className="application-wrapper">

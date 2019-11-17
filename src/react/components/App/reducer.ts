@@ -33,9 +33,30 @@ export function reducer(
         openFiles: state.openFiles.filter((_, index) => index !== tabIndex)
       };
     }
-    case actions.ON_UPDATE_SELECTED_FILE: {
+    case actions.ON_FILE_SELECT: {
       return {
         ...state,
+        currentFile: action.payload as string
+      };
+    }
+    case actions.ON_SAVE_FILE: {
+      const file = state.openFiles.find(e => e.name === state.currentFile);
+      if (file) {
+        file.unsaved = false;
+      }
+      return {
+        ...state,
+        openFiles: state.openFiles
+      };
+    }
+    case actions.ON_RENAME_FILE: {
+      const file = state.openFiles.find(e => e.name === state.currentFile);
+      if (file) {
+        file.name = action.payload as string;
+      }
+      return {
+        ...state,
+        openFiles: state.openFiles,
         currentFile: action.payload as string
       };
     }

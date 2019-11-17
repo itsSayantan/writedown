@@ -1,5 +1,6 @@
-import { ipcMain, BrowserWindow } from "electron";
+import { BrowserWindow, dialog } from "electron";
 import { debuglog } from "util";
+import * as os from "os";
 
 const log = debuglog("electron:emitted-events");
 
@@ -20,7 +21,13 @@ const emitSaveSignalFromApplicationMenu = (
   log(
     "electron:emitted-events->emitSaveSignalFromApplicationMenu::event fired"
   );
-  writedownMainBrowserWindow.webContents.send(eventString);
+  const path = dialog.showSaveDialogSync({
+    buttonLabel: "Save 123",
+    defaultPath: os.homedir(),
+    message: " Save your file",
+    title: "File saver"
+  });
+  writedownMainBrowserWindow.webContents.send(eventString, path);
 };
 
 export { emitNewSignalFromApplicationMenu, emitSaveSignalFromApplicationMenu };
