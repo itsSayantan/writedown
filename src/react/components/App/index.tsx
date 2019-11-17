@@ -20,6 +20,10 @@ export const App = () => {
         type: actions.ON_NEW_FILE,
         payload: "Untitled-" + (context.totalOpenedFiles + 1)
       });
+      dispatch({
+        type: actions.ON_UPDATE_SELECTED_FILE,
+        payload: "Untitled-" + (context.totalOpenedFiles + 1)
+      });
     });
   }, [context.totalOpenedFiles]);
 

@@ -6,11 +6,5 @@ import "./style.scss";
 export const ContentArea = (props: Props) => {
   const contextValues = React.useContext(AppContext);
   const { dispatch } = props;
-  return (
-    <div
-      className="content-area-wrapper"
-      style={{ ...contextValues.theme }}
-      contentEditable={true}
-    ></div>
-  );
+  return <div className="content-area-wrapper" contentEditable={true}></div>;
 };

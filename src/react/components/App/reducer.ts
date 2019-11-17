@@ -33,6 +33,12 @@ export function reducer(
         openFiles: state.openFiles.filter((_, index) => index !== tabIndex)
       };
     }
+    case actions.ON_UPDATE_SELECTED_FILE: {
+      return {
+        ...state,
+        currentFile: action.payload as string
+      };
+    }
     default:
       return state;
   }
