@@ -4,7 +4,11 @@ export function getDefaultContextValues(): ContextProps {
   return {
     theme: {
       backgroundColor: "#fff",
-      color: "#000"
+      color: "#000",
+      ApplicationFooter: {
+        backgroundColor: "#fff",
+        color: "#000"
+      }
     },
     currentFile: "Untitled-1",
     openFiles: [

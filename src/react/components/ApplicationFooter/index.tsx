@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ApplicationFooterProps } from "./model";
+import { AppContext } from "@Shared/context";
 
 import "./style.scss";
 
@@ -22,11 +23,34 @@ export const ApplicationFooter = (props: ApplicationFooterProps) => {
   ));
 
   return (
-    <>
-      <div className="application-footer-wrapper">
-        <div className="application-footer-item left">{leftChildren}</div>
-        <div className="application-footer-item right">{rightChildren}</div>
-      </div>
-    </>
+    <AppContext.Consumer>
+      {val => {
+        return (
+          <div
+            className="application-footer-wrapper"
+            style={{
+              backgroundColor: val?.theme?.ApplicationFooter?.backgroundColor
+            }}
+          >
+            <div
+              className="application-footer-item left"
+              style={{
+                color: val?.theme?.ApplicationFooter?.color
+              }}
+            >
+              {leftChildren}
+            </div>
+            <div
+              className="application-footer-item right"
+              style={{
+                color: val?.theme?.ApplicationFooter?.color
+              }}
+            >
+              {rightChildren}
+            </div>
+          </div>
+        );
+      }}
+    </AppContext.Consumer>
   );
 };
