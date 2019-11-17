@@ -16,6 +16,7 @@ export function getDefaultContextValues(): ContextProps {
         name: "Untitled-1",
         unsaved: true
       }
-    ]
+    ],
+    totalOpenedFiles: 1
   };
 }

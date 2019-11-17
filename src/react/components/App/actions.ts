@@ -1,4 +1,5 @@
 export enum actions {
-  "UPDATE_THEME",
-  "UPDATE_OPEN_FILENAME"
+  "ON_UPDATE_THEME",
+  "ON_NEW_FILE",
+  "ON_CLOSE_FILE"
 }

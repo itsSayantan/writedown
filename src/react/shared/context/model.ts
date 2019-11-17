@@ -2,6 +2,7 @@ export type ContextProps = {
   openFiles: { name: string; unsaved: boolean }[];
   currentFile: string;
   theme: ThemeType;
+  totalOpenedFiles: number;
 };
 
 export type ApplicationFooterThemeType = {
