@@ -1,8 +1,8 @@
 .filetabs-wrapper {
-  height: 25px;
+  height: 35px;
   background-color: black;
   display: flex;
-  font-size: 10px;
+  font-size: 13px;
   border-bottom: 1px solid #000;
   padding-bottom: 0px;
   overflow: auto;
@@ -10,7 +10,7 @@
     max-width: 190px;
     border-top: none;
     border-bottom: none;
-    padding: 0 0.5em;
+    padding: 0 0.5em 0 10px;
     line-height: 30px;
     box-sizing: border-box;
     box-shadow: inset 0 0 2px 0px #333444;
@@ -28,8 +28,8 @@
       margin-right: 5px;
     }
     > .close {
-      width: 18px;
-      height: 17px;
+      width: 10px;
+      height: 10px;
       opacity: 0;
     }
     &:hover > .close {
@@ -40,6 +40,7 @@
     }
     > .name {
       user-select: none;
+      padding: 0 3px;
     }
   }
   & > .active {
