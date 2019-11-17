@@ -9,9 +9,16 @@ export type ApplicationFooterThemeType = {
   color: string;
   backgroundColor: string;
 };
+export type FileTabsTheme = {
+  tabBackgroundColor: string;
+  tabTextColor: string;
+  tabCloseIconColor: string;
+  tabUnsavedIndicatorColor: string;
+  tabActiveBackgroundColor: string;
+  tabSeparatorColor: string;
+};
 
 export type ThemeType = {
-  color: string;
-  backgroundColor: string;
   ApplicationFooter: ApplicationFooterThemeType;
+  FileTabs: FileTabsTheme;
 };
