@@ -25,17 +25,18 @@ export const ApplicationFooter = (props: ApplicationFooterProps) => {
   return (
     <AppContext.Consumer>
       {val => {
+        const af = val?.theme?.ApplicationFooter;
         return (
           <div
             className="application-footer-wrapper"
             style={{
-              backgroundColor: val?.theme?.ApplicationFooter?.backgroundColor
+              backgroundColor: af?.backgroundColor
             }}
           >
             <div
               className="application-footer-item left"
               style={{
-                color: val?.theme?.ApplicationFooter?.color
+                color: af?.color
               }}
             >
               {leftChildren}
@@ -43,7 +44,7 @@ export const ApplicationFooter = (props: ApplicationFooterProps) => {
             <div
               className="application-footer-item right"
               style={{
-                color: val?.theme?.ApplicationFooter?.color
+                color: af?.color
               }}
             >
               {rightChildren}
