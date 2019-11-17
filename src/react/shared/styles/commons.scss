@@ -13,3 +13,12 @@
 .pointer {
   cursor: pointer;
 }
+.flex-absolute-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-vertical-center {
+  display: flex;
+  align-items: center;
+}
