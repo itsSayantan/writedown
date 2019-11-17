@@ -6,11 +6,13 @@ import * as path from "path";
 
 import { fileMenuItems } from "../constants/application-main-menu";
 
-const createApplicationMenu = (): Menu => {
+const createApplicationMenu = (
+  writedownMainBrowserWindow: BrowserWindow
+): Menu => {
   return Menu.buildFromTemplate([
     {
       label: "File",
-      submenu: fileMenuItems
+      submenu: fileMenuItems(writedownMainBrowserWindow)
     }
   ]);
 };
@@ -35,7 +37,7 @@ const createWindow = (): void => {
       : `file://${path.join(__dirname, "./dist/index.html")}`
   );
 
-  Menu.setApplicationMenu(createApplicationMenu());
+  Menu.setApplicationMenu(createApplicationMenu(writedownMainBrowserWindow));
 };
 
 export { createWindow };
