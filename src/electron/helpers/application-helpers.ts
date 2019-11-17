@@ -16,7 +16,7 @@ const createApplicationMenu = (): Menu => {
 };
 
 const createWindow = (): void => {
-  const log = debuglog("electron:createWindow");
+  const log = debuglog("electron:application-helpers");
   let writedownMainBrowserWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -24,7 +24,7 @@ const createWindow = (): void => {
       nodeIntegration: true
     }
   });
-  log("window created");
+  log("application-helpers->createWindow::window created");
 
   writedownMainBrowserWindow.maximize();
   writedownMainBrowserWindow.webContents.openDevTools();
