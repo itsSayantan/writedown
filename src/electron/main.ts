@@ -1,6 +1,8 @@
-import { app } from "electron";
+import { app, ipcMain } from "electron";
 
-import { appEvents } from "./constants/events";
+import { appIncomingEvents, ipcMainIncomingEvents } from "./constants/events";
 import EventHandler from "./event-handler";
 
-EventHandler.attachEvents(app, appEvents);
+// Attach the incoming events for both 'app' and 'ipcMain'
+EventHandler.attachEvents(app, appIncomingEvents);
+EventHandler.attachEvents(ipcMain, ipcMainIncomingEvents);
