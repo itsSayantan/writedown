@@ -32,7 +32,7 @@ export const FileTabs = (props: Props) => {
   } = contextValues;
   const tabClickHandler = (filename: string) => {
     dispatch({
-      type: actions.ON_UPDATE_SELECTED_FILE,
+      type: actions.ON_FILE_SELECT,
       payload: filename
     });
   };
@@ -41,7 +41,7 @@ export const FileTabs = (props: Props) => {
       {contextValues.openFiles.map((file, index) => {
         return (
           <div
-            className={`ellipsis pointer flex-vertical-center ${
+            className={`pointer flex-vertical-center ${
               file.name === currentFile ? "active" : ""
             }`}
             key={index}
@@ -56,11 +56,13 @@ export const FileTabs = (props: Props) => {
                 "#59595A"}`
             }}
           >
-            <div
-              className="unsaved"
-              style={{ backgroundColor: FileTabs.tabUnsavedIndicatorColor }}
-            ></div>
-            <div className="name">{file.name}</div>
+            {file.unsaved ? (
+              <div
+                className="unsaved"
+                style={{ backgroundColor: FileTabs.tabUnsavedIndicatorColor }}
+              ></div>
+            ) : null}
+            <div className="name ellipsis">{file.name}</div>
             <div
               className="close flex-absolute-center"
               onClick={ev => closeHandler(ev, index)}
