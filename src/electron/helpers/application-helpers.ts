@@ -1,4 +1,4 @@
-import { BrowserWindow, Menu } from "electron";
+import { BrowserWindow, Menu, nativeImage } from "electron";
 import * as isDev from "electron-is-dev";
 
 import { debuglog } from "util";
@@ -22,6 +22,7 @@ const createWindow = (): void => {
   let writedownMainBrowserWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    icon: nativeImage.createFromPath("./wd.png"),
     webPreferences: {
       nodeIntegration: true
     }
