@@ -1,4 +1,18 @@
 .application-wrapper {
   width: 100vw;
   height: 100vh;
+
+  .body-wrapper {
+    height: calc(100% - 22px);
+    display: flex;
+    font-family: "Roboto";
+    letter-spacing: 0.5px;
+    overflow: hidden;
+  }
+  .left-pane-wrapper {
+    width: 0%;
+  }
+  .right-pane-wrapper {
+    width: 100%;
+  }
 }

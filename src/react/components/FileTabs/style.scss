@@ -3,16 +3,48 @@
   background-color: #07511645;
   display: flex;
   font-size: 12px;
+  border-bottom: 1px solid #000;
+  padding: 5px;
+  padding-bottom: 0px;
+  overflow: auto;
   & > div {
     width: 190px;
-    border: 1px solid chartreuse;
+    border: 1px solid #000;
     border-top: none;
     border-bottom: none;
     padding: 0 0.5em;
     line-height: 30px;
     box-sizing: border-box;
+    box-shadow: 0 0 3px 0px #000;
+    border-radius: 5px 5px 0px 0px;
+    flex: 0 0 auto;
+    margin-right: 5px;
+    justify-content: space-between;
+    > .unsaved {
+      &::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+    > .close {
+      width: 18px;
+      height: 17px;
+      &:hover {
+        background-color: #0000008c;
+        color: #fff;
+        border-radius: 5px;
+      }
+    }
   }
   & > .active {
     background-color: #00800075;
+  }
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

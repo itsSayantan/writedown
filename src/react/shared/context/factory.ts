@@ -6,7 +6,12 @@ export function getDefaultContextValues(): ContextProps {
       backgroundColor: "#fff",
       color: "#000"
     },
-    currentFile: "",
-    openFiles: []
+    currentFile: "Untitled-1",
+    openFiles: [
+      {
+        name: "Untitled-1",
+        unsaved: true
+      }
+    ]
   };
 }

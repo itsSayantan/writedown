@@ -16,8 +16,13 @@ export const App = () => {
   return (
     <div className="application-wrapper">
       <AppContext.Provider value={context}>
-        <FileTabs dispatch={dispatch} />
-        <ContentArea dispatch={dispatch} />
+        <div className="body-wrapper">
+          <div className="left-pane-wrapper"></div>
+          <div className="right-pane-wrapper">
+            <FileTabs dispatch={dispatch} />
+            <ContentArea dispatch={dispatch} />
+          </div>
+        </div>
         <ApplicationFooter
           render={[
             { component: () => <div>Gitlens</div>, align: "left" },

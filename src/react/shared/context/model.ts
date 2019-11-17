@@ -1,5 +1,5 @@
 export type ContextProps = {
-  openFiles: string[];
+  openFiles: { name: string; unsaved: boolean }[];
   currentFile: string;
   theme: ThemeType;
 };
