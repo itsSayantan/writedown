@@ -22,7 +22,7 @@ const emitSaveSignalFromApplicationMenu = (
     "electron:emitted-events->emitSaveSignalFromApplicationMenu::event fired"
   );
   const path = dialog.showSaveDialogSync({
-    buttonLabel: "Save 123",
+    buttonLabel: "Save",
     defaultPath: os.homedir(),
     message: " Save your file",
     title: "File saver"
