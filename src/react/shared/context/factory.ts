@@ -1,21 +1,31 @@
-import { ContextProps } from "./model";
+import * as fs from "fs";
+import { ContextProps, SettingsType, ThemeType } from "./model";
+import { Constants } from "./constants";
+
+const settingsFilePath = Constants.WD_SETTINGS_FILE_PATH;
+const themesDir = Constants.WD_THEMES_DIR;
+
+let settings: SettingsType;
+let themes: ThemeType;
+
+if (fs.existsSync(settingsFilePath)) {
+  settings = JSON.parse(fs.readFileSync(settingsFilePath, "utf-8"));
+  if (fs.existsSync(themesDir + settings.theme + ".json")) {
+    themes = JSON.parse(
+      fs.readFileSync(themesDir + settings.theme + ".json", "utf-8")
+    );
+  } else {
+    throw new Error(
+      `ERR:${themesDir + settings.theme} .json file could not be found.`
+    );
+  }
+} else {
+  throw new Error(`ERR:settings.json could not be found.`);
+}
 
 export function getDefaultContextValues(): ContextProps {
   return {
-    theme: {
-      ApplicationFooter: {
-        backgroundColor: "#202417",
-        color: "#F2E7E1"
-      },
-      FileTabs: {
-        tabBackgroundColor: "#202417",
-        tabTextColor: "#F2E7E1",
-        tabCloseIconColor: "#F2E7E1",
-        tabUnsavedIndicatorColor: "#F2E7E1",
-        tabActiveBackgroundColor: "#696969",
-        tabSeparatorColor: "#59595A"
-      }
-    },
+    theme: themes,
     currentFile: "Untitled-1",
     openFiles: [
       {
