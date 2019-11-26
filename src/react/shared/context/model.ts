@@ -22,3 +22,7 @@ export type ThemeType = {
   ApplicationFooter: ApplicationFooterThemeType;
   FileTabs: FileTabsTheme;
 };
+
+export type SettingsType = {
+  theme: string;
+};
