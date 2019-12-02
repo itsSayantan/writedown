@@ -51,9 +51,11 @@
   "dependencies": {
     "concurrently": "^5.0.0",
     "cross-env": "^6.0.3",
+    "custom-error-boundary": "^1.1.1",
     "electron-is-dev": "^1.1.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "wait-on": "^3.3.0"
+    "wait-on": "^3.3.0",
+    "writedown-editor": "^1.1.1"
   }
 }
