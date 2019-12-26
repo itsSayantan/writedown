@@ -3,6 +3,16 @@ export type ContextProps = {
   currentFile: string;
   theme: ThemeType;
   totalOpenedFiles: number;
+  WDEDefaultOptions: {
+    lineBackground: string;
+    lineForeground: string;
+    focussedLineBackground: string;
+    focussedLineForeground: string;
+    editorBackground: string;
+    editorForeground: string;
+    cursorColor: string;
+    onChange: (ev: any) => void;
+  };
 };
 
 export type ApplicationFooterThemeType = {

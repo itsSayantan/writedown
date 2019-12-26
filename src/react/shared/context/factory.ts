@@ -33,6 +33,18 @@ export function getDefaultContextValues(): ContextProps {
         unsaved: true
       }
     ],
-    totalOpenedFiles: 1
+    totalOpenedFiles: 1,
+    WDEDefaultOptions: {
+      lineBackground: "black",
+      lineForeground: "white",
+      focussedLineBackground: "white",
+      focussedLineForeground: "black",
+      editorBackground: "blue",
+      editorForeground: "white",
+      cursorColor: "rgba(255,0,0,1)",
+      onChange: (ev: any) => {
+        console.log(ev.getPlainTextContent());
+      }
+    }
   };
 }
